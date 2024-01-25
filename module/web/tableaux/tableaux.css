@@ -1,0 +1,9 @@
+
+/*collapse border (bordure colé)*/
+table {
+    border-collapse: collapse;
+}
+
+td, th /* set border to td and th */ {
+    border: 1px solid black;
+}

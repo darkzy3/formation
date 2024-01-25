@@ -1,0 +1,9 @@
+exposer on trigger
+
+trigger is a condition for make action with functions this functionment are in the action of user coparable at the onClick in html if user
+make action conditional for trigger the triggre condition use the attach functions before execution execpt if contraint option ajustable with
+set constraints(7) to make action at the end of other using but if serveral trigger for a same action it will be relized in alphabetical order
+he can make loop if mark with a FOR EACH ROW. he are called for all line she undergone a modificaiton but if mark FOR EACH STATMENT all modificaiton
+are make in one action.
+
+SET CONSTRAINTS défin comportement of the vérification of consraints in the curent condition.
