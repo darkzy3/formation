@@ -46,16 +46,12 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 150)]
     private ?string $city = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $created_at = null;
-
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Orders::class)]
     private Collection $orders;
 
     public function __construct()
     {
         $this->orders = new ArrayCollection();
-        $this->created_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -184,18 +180,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCity(string $city): static
     {
         $this->city = $city;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
-    {
-        $this->created_at = $created_at;
 
         return $this;
     }

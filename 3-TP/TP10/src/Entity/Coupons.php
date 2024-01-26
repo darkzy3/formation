@@ -34,9 +34,6 @@ class Coupons
     #[ORM\Column]
     private ?bool $is_valid = null;
 
-    #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
-    private ?\DateTimeImmutable $created_at = null;
-
     #[ORM\ManyToOne(inversedBy: 'coupons')]
     #[ORM\JoinColumn(nullable: false)]
     private ?CouponsTypes $coupons_types = null;
@@ -47,7 +44,6 @@ class Coupons
     public function __construct()
     {
         $this->orders = new ArrayCollection();
-        $this->created_at = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -127,18 +123,6 @@ class Coupons
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
     public function getCouponsTypes(): ?CouponsTypes
     {
         return $this->coupons_types;
@@ -150,7 +134,6 @@ class Coupons
 
         return $this;
     }
-
     /**
      * @return Collection<int, Orders>
      */
